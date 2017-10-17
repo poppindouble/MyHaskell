@@ -29,12 +29,12 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/Users/shuangshuangzhao/Documents/Haskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/bin"
-libdir     = "/Users/shuangshuangzhao/Documents/Haskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/lib/x86_64-osx-ghc-8.0.2/man-0.1.0.0"
-dynlibdir  = "/Users/shuangshuangzhao/Documents/Haskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/lib/x86_64-osx-ghc-8.0.2"
-datadir    = "/Users/shuangshuangzhao/Documents/Haskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/share/x86_64-osx-ghc-8.0.2/man-0.1.0.0"
-libexecdir = "/Users/shuangshuangzhao/Documents/Haskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/libexec"
-sysconfdir = "/Users/shuangshuangzhao/Documents/Haskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/etc"
+bindir     = "/Users/shuangshuangzhao/Documents/Haskell/code/MyHaskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/bin"
+libdir     = "/Users/shuangshuangzhao/Documents/Haskell/code/MyHaskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/lib/x86_64-osx-ghc-8.0.2/man-0.1.0.0"
+dynlibdir  = "/Users/shuangshuangzhao/Documents/Haskell/code/MyHaskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/lib/x86_64-osx-ghc-8.0.2"
+datadir    = "/Users/shuangshuangzhao/Documents/Haskell/code/MyHaskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/share/x86_64-osx-ghc-8.0.2/man-0.1.0.0"
+libexecdir = "/Users/shuangshuangzhao/Documents/Haskell/code/MyHaskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/libexec"
+sysconfdir = "/Users/shuangshuangzhao/Documents/Haskell/code/MyHaskell/project/man/.stack-work/install/x86_64-osx/lts-9.8/8.0.2/etc"
 
 getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "man_bindir") (\_ -> return bindir)
