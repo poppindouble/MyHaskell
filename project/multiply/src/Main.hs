@@ -47,6 +47,7 @@ genEither = do
   b <- arbitrary
   elements [Left a, Right b]
 
+-- a is instace of Arbitrary typeclass
 genMaybe :: Arbitrary a => Gen (Maybe a)
 genMaybe = do
   a <- arbitrary
