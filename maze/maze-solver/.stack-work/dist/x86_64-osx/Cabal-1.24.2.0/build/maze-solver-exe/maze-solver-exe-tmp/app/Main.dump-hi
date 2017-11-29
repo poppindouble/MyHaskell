@@ -1,0 +1,811 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-29 01:29:22.397364 UTC
+
+interface main@main:Main 8002
+  interface hash: c4231a709a56364c602fe622bc8e5bca
+  ABI hash: 50d794d9fc330a8a4a727ad319aaa4bd
+  export-list hash: d53392a99841cdbcce087c499deb6b1f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 6aa5da388c08d1b9642a3f5980791e15
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.changeNthCharInString
+  Main.explore
+  Main.foundTheGold
+  Main.initExplorer
+  Main.initGameState
+  Main.initMaze
+  Main.isInsideMaze
+  Main.isWalkable
+  Main.main
+  Main.markMaze
+  Main.traceBack
+  Main.walk
+  Main.Direction{Main.East Main.North Main.South Main.Stay Main.West}
+  Main.Explorer{Main.Explorer}
+  Main.GameState
+  Main.Maze
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      maze-solver-0.1.0.0@maze-solver-0.1.0.0-LmbrV5KPGbO7w4YgEMnJHi
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity base-4.9.1.0:Data.List.NonEmpty
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Semigroup
+                         base-4.9.1.0:Data.Type.Equality base-4.9.1.0:Data.Version
+                         base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  maze-solver-0.1.0.0@maze-solver-0.1.0.0-LmbrV5KPGbO7w4YgEMnJHi:Lib 300d33eabe914276881d16cd2ef30930
+import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State 749dca8ca0e6625b32091d445bd92b01
+import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State.Class 6d31234b0a911b56412061943d18b89e
+import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.State.Lazy 371607e50dde46b5f4103b3ab334a497
+0ef083455003fbfde97b4436ef78b80a
+  $fEqDirection :: GHC.Classes.Eq Main.Direction
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Direction Main.$fEqDirection_$c== Main.$fEqDirection_$c/= -}
+0ef083455003fbfde97b4436ef78b80a
+  $fEqDirection_$c/= ::
+    Main.Direction -> Main.Direction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Main.Direction) (b :: Main.Direction) ->
+                 case a of wild {
+                   Main.North
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Main.North -> GHC.Types.False }
+                   Main.West
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Main.West -> GHC.Types.False }
+                   Main.South
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Main.South -> GHC.Types.False }
+                   Main.East
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Main.East -> GHC.Types.False }
+                   Main.Stay
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Main.Stay -> GHC.Types.False } }) -}
+0ef083455003fbfde97b4436ef78b80a
+  $fEqDirection_$c== ::
+    Main.Direction -> Main.Direction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Main.Direction) (ds1 :: Main.Direction) ->
+                 case ds of wild {
+                   Main.North
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Main.North -> GHC.Types.True }
+                   Main.West
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Main.West -> GHC.Types.True }
+                   Main.South
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Main.South -> GHC.Types.True }
+                   Main.East
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Main.East -> GHC.Types.True }
+                   Main.Stay
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Main.Stay -> GHC.Types.True } }) -}
+0ef083455003fbfde97b4436ef78b80a
+  $fShowDirection :: GHC.Show.Show Main.Direction
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Direction
+                  Main.$fShowDirection_$cshowsPrec
+                  Main.$fShowDirection_$cshow
+                  Main.$fShowDirection_$cshowList -}
+3f5133519300365852996707b4be8053
+  $fShowDirection1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Stay"#) -}
+8c5aff3b1cf664f7c86829e93557900e
+  $fShowDirection2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "East"#) -}
+a852e073259475109952a7a3f62c05df
+  $fShowDirection3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "South"#) -}
+dd1a2465d1083204b751d4e66a34411e
+  $fShowDirection4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "West"#) -}
+5ee20ce685c2dd16ad89f26f01cb635e
+  $fShowDirection5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "North"#) -}
+0ef083455003fbfde97b4436ef78b80a
+  $fShowDirection_$cshow :: Main.Direction -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.Direction) ->
+                 Main.$fShowDirection_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+0ef083455003fbfde97b4436ef78b80a
+  $fShowDirection_$cshowList :: [Main.Direction] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Main.Direction
+                   Main.$w$cshowsPrec) -}
+0ef083455003fbfde97b4436ef78b80a
+  $fShowDirection_$cshowsPrec ::
+    GHC.Types.Int -> Main.Direction -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Main.Direction)
+                   (w2 :: GHC.Base.String) ->
+                 Main.$w$cshowsPrec w1 w2) -}
+bb3361d23a8495ec1af6cf540a991ca3
+  $tc'East :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17050888357325516587##
+                   14332750735201958761##
+                   Main.$trModule
+                   Main.$tc'East1) -}
+19fa6cbac932e1caebd7789680e0bdc2
+  $tc'East1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'East"#) -}
+0ef9483c7983d2d11d1ff88d966a89b0
+  $tc'Explorer :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16483678588871963430##
+                   8120979462103229731##
+                   Main.$trModule
+                   Main.$tc'Explorer1) -}
+e35ec6903c1be2d9fe9036a679297a23
+  $tc'Explorer1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Explorer"#) -}
+0edb16c3234c59d43265681d7d6ac1e5
+  $tc'North :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5808512179632543678##
+                   4812681596767726810##
+                   Main.$trModule
+                   Main.$tc'North1) -}
+d677880d1be110825de991421164b5b8
+  $tc'North1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'North"#) -}
+558c905748b19f040e0b42b3ec2b4b5b
+  $tc'South :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2865139038180644598##
+                   369507681303017565##
+                   Main.$trModule
+                   Main.$tc'South1) -}
+618507f602f76d25fd8ebd891ff18fdb
+  $tc'South1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'South"#) -}
+d073dc77500e0ca119befaae36c01847
+  $tc'Stay :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5726002932276274628##
+                   3475497434120960821##
+                   Main.$trModule
+                   Main.$tc'Stay1) -}
+fcda9ff2f59800bc7646c4ab88884141
+  $tc'Stay1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Stay"#) -}
+648b72be95d48920bfacfc4ee03e6ced
+  $tc'West :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   18209971024130499686##
+                   12327776225892234735##
+                   Main.$trModule
+                   Main.$tc'West1) -}
+e65c9c99cbb1524854730fecd4bfbfcc
+  $tc'West1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'West"#) -}
+d23b3790d5ce3eae4079939a31790fd1
+  $tcDirection :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8861613431361662842##
+                   8009291694613289018##
+                   Main.$trModule
+                   Main.$tcDirection1) -}
+0492ff0201b32249ba743eec86e7184a
+  $tcDirection1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Direction"#) -}
+3f417188055d15fe6a3222920b801c46
+  $tcExplorer :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11358254232358395144##
+                   15067937489916249049##
+                   Main.$trModule
+                   Main.$tcExplorer1) -}
+1ebeb637ee235ef6b91e622115946d1a
+  $tcExplorer1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Explorer"#) -}
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+0ef083455003fbfde97b4436ef78b80a
+  $w$cshowsPrec ::
+    Main.Direction -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Main.Direction) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Main.North -> GHC.Base.++ @ GHC.Types.Char Main.$fShowDirection5 w1
+                   Main.West -> GHC.Base.++ @ GHC.Types.Char Main.$fShowDirection4 w1
+                   Main.South -> GHC.Base.++ @ GHC.Types.Char Main.$fShowDirection3 w1
+                   Main.East -> GHC.Base.++ @ GHC.Types.Char Main.$fShowDirection2 w1
+                   Main.Stay
+                   -> GHC.Base.++ @ GHC.Types.Char Main.$fShowDirection1 w1 }) -}
+881a25a0fbd9d6d148841c1fc629a7aa
+  $wchangeNthCharInString ::
+    GHC.Prim.Int#
+    -> GHC.Types.Char -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: GHC.Types.Char)
+                   (w1 :: GHC.Base.String) ->
+                 let {
+                   n :: [GHC.Types.Char]
+                   = let {
+                       x :: GHC.Prim.Int# = GHC.Prim.+# ww 1#
+                     } in
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# x 0#) of wild {
+                       GHC.Types.False -> Main.$wunsafeDrop @ GHC.Types.Char x w1
+                       GHC.Types.True -> w1 }
+                 } in
+                 let {
+                   n1 :: [GHC.Types.Char] = GHC.Types.: @ GHC.Types.Char w n
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<# 0# ww) of wild {
+                   GHC.Types.False -> n1
+                   GHC.Types.True
+                   -> letrec {
+                        $wgo :: [GHC.Types.Char] -> GHC.Prim.Int# -> [GHC.Types.Char]
+                          {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0] -}
+                        = \ (w2 :: [GHC.Types.Char]) (ww1 :: GHC.Prim.Int#) ->
+                          case w2 of wild1 {
+                            [] -> n1
+                            : y ys
+                            -> case ww1 of ds1 {
+                                 DEFAULT
+                                 -> GHC.Types.: @ GHC.Types.Char y ($wgo ys (GHC.Prim.-# ds1 1#))
+                                 1# -> GHC.Types.: @ GHC.Types.Char y n1 } }
+                      } in
+                      $wgo w1 ww }) -}
+5a52f52cbacba289eaf09d4f256fef2c
+  $wexplore ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int
+    -> [Main.Direction]
+    -> Main.Maze
+    -> (# GHC.Types.Int, GHC.Types.Int, [Main.Direction] #)
+  {- Arity: 4, Strictness: <S,U><L,U(U)><L,1*U><L,U>, Inline: [0] -}
+5c5c904797b34829d707b92eaa4d9338
+  $wfoundTheGold ::
+    GHC.Prim.Int# -> GHC.Types.Int -> Main.Maze -> GHC.Types.Bool
+  {- Arity: 3, Strictness: <S,U><L,U(U)><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: GHC.Types.Int)
+                   (w1 :: Main.Maze) ->
+                 case Main.$wisInsideMaze ww w w1 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case w of ww1 { GHC.Types.I# ww2 ->
+                      case GHC.List.$w!!
+                             @ GHC.Types.Char
+                             (GHC.List.$w!! @ GHC.Base.String w1 ww)
+                             ww2 of wild1 { GHC.Types.C# x ->
+                      case x of wild2 {
+                        DEFAULT -> GHC.Types.False 'G'# -> GHC.Types.True } } } }) -}
+fa22070f3db5b1771f3dfa0aa03838a7
+  $wisInsideMaze ::
+    GHC.Prim.Int# -> GHC.Types.Int -> Main.Maze -> GHC.Types.Bool
+  {- Arity: 3, Strictness: <S,U><L,1*U(U)><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: GHC.Types.Int)
+                   (w1 :: Main.Maze) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<# ww 0#) of wild {
+                   GHC.Types.False
+                   -> case GHC.List.$wlenAcc
+                             @ [GHC.Types.Char]
+                             w1
+                             0# of ww2 { DEFAULT ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww ww2) of wild1 {
+                        GHC.Types.False
+                        -> case w of wild2 { GHC.Types.I# x ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<# x 0#) of wild3 {
+                             GHC.Types.False
+                             -> case GHC.List.$wlenAcc
+                                       @ GHC.Types.Char
+                                       (GHC.List.$w!! @ GHC.Base.String w1 0#)
+                                       0# of ww1 { DEFAULT ->
+                                case GHC.Prim.tagToEnum#
+                                       @ GHC.Types.Bool
+                                       (GHC.Prim.>=# x ww1) of wild4 {
+                                  GHC.Types.False -> GHC.Types.True
+                                  GHC.Types.True -> GHC.Types.False } }
+                             GHC.Types.True -> GHC.Types.False } }
+                        GHC.Types.True -> GHC.Types.False } }
+                   GHC.Types.True -> GHC.Types.False }) -}
+9c3b2ec5dbf814b968f8cdc5075642db
+  $wisWalkable ::
+    GHC.Prim.Int# -> GHC.Types.Int -> Main.Maze -> GHC.Types.Bool
+  {- Arity: 3, Strictness: <S,U><L,U(U)><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: GHC.Types.Int)
+                   (w1 :: Main.Maze) ->
+                 case Main.$wisInsideMaze ww w w1 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case w of ww1 { GHC.Types.I# ww2 ->
+                      case GHC.List.$w!!
+                             @ GHC.Types.Char
+                             (GHC.List.$w!! @ GHC.Base.String w1 ww)
+                             ww2 of wild1 { GHC.Types.C# x ->
+                      case x of wild2 {
+                        DEFAULT -> GHC.Types.False
+                        '.'# -> GHC.Types.True
+                        'G'# -> GHC.Types.True } } } }) -}
+5563c30cecd5e4fadba2ae6570567107
+  $wmarkMaze ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int -> GHC.Types.Char -> Main.Maze -> Main.Maze
+  {- Arity: 4, Strictness: <S,U><L,1*U(U)><L,U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Types.Int)
+                   (w :: GHC.Types.Char)
+                   (w1 :: Main.Maze) ->
+                 let {
+                   n :: GHC.Base.String
+                   = case ww1 of ww2 { GHC.Types.I# ww3 ->
+                     Main.$wchangeNthCharInString
+                       ww3
+                       w
+                       (GHC.List.$w!! @ GHC.Base.String w1 ww) }
+                 } in
+                 let {
+                   n1 :: [[GHC.Types.Char]]
+                   = let {
+                       x :: GHC.Prim.Int# = GHC.Prim.+# ww 1#
+                     } in
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# x 0#) of wild {
+                       GHC.Types.False -> Main.$wunsafeDrop1 @ GHC.Base.String x w1
+                       GHC.Types.True -> w1 }
+                 } in
+                 let {
+                   n2 :: [[GHC.Types.Char]] = GHC.Types.: @ [GHC.Types.Char] n n1
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<# 0# ww) of wild {
+                   GHC.Types.False -> n2
+                   GHC.Types.True
+                   -> letrec {
+                        $wgo :: [[GHC.Types.Char]] -> GHC.Prim.Int# -> [[GHC.Types.Char]]
+                          {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0] -}
+                        = \ (w2 :: [[GHC.Types.Char]]) (ww2 :: GHC.Prim.Int#) ->
+                          case w2 of wild1 {
+                            [] -> n2
+                            : y ys
+                            -> case ww2 of ds1 {
+                                 DEFAULT
+                                 -> GHC.Types.: @ [GHC.Types.Char] y ($wgo ys (GHC.Prim.-# ds1 1#))
+                                 1# -> GHC.Types.: @ [GHC.Types.Char] y n2 } }
+                      } in
+                      $wgo w1 ww }) -}
+eb2b15bc36458640189c6eb0f96bb81c
+  $wtraceBack ::
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> [Main.Direction]
+    -> (# GHC.Types.Int, GHC.Types.Int, [Main.Direction] #)
+  {- Arity: 3, Strictness: <L,U(U)><L,U(U)><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Types.Int)
+                   (ww1 :: GHC.Types.Int)
+                   (ww2 :: [Main.Direction]) ->
+                 case Main.traceBack_go3
+                        ww2
+                        (GHC.List.lastError @ Main.Direction) of wild {
+                   DEFAULT
+                   -> let {
+                        $w$j :: GHC.Prim.Void#
+                                -> (# GHC.Types.Int, GHC.Types.Int, [Main.Direction] #)
+                          {- Arity: 1, Strictness: <L,U>, Inline: [0] -}
+                        = \ (void :: GHC.Prim.Void#)[OneShot] ->
+                          case Main.traceBack_go2
+                                 ww2
+                                 (GHC.List.lastError @ Main.Direction) of wild1 {
+                            DEFAULT
+                            -> case Main.traceBack_go1
+                                      ww2
+                                      (GHC.List.lastError @ Main.Direction) of wild2 {
+                                 DEFAULT
+                                 -> case Main.traceBack1
+                                    ret_ty (# GHC.Types.Int, GHC.Types.Int, [Main.Direction] #)
+                                    of {}
+                                 Main.South
+                                 -> (# case ww of wild3 { GHC.Types.I# x ->
+                                       GHC.Types.I# (GHC.Prim.-# x 1#) },
+                                       ww1,
+                                       case GHC.List.$wlenAcc
+                                              @ Main.Direction
+                                              ww2
+                                              0# of ww3 { DEFAULT ->
+                                       let {
+                                         y :: GHC.Prim.Int# = GHC.Prim.-# ww3 1#
+                                       } in
+                                       case GHC.Prim.tagToEnum#
+                                              @ GHC.Types.Bool
+                                              (GHC.Prim.<# 0# y) of wild3 {
+                                         GHC.Types.False -> GHC.Types.[] @ Main.Direction
+                                         GHC.Types.True
+                                         -> GHC.List.$wunsafeTake @ Main.Direction y ww2 } } #) }
+                            Main.West
+                            -> (# ww,
+                                  case ww1 of wild2 { GHC.Types.I# x ->
+                                  GHC.Types.I# (GHC.Prim.+# x 1#) },
+                                  case GHC.List.$wlenAcc @ Main.Direction ww2 0# of ww3 { DEFAULT ->
+                                  let {
+                                    y :: GHC.Prim.Int# = GHC.Prim.-# ww3 1#
+                                  } in
+                                  case GHC.Prim.tagToEnum#
+                                         @ GHC.Types.Bool
+                                         (GHC.Prim.<# 0# y) of wild2 {
+                                    GHC.Types.False -> GHC.Types.[] @ Main.Direction
+                                    GHC.Types.True
+                                    -> GHC.List.$wunsafeTake @ Main.Direction y ww2 } } #) }
+                      } in
+                      case Main.traceBack_go
+                             ww2
+                             (GHC.List.lastError @ Main.Direction) of wild1 {
+                        Main.North
+                        -> (# case ww of wild2 { GHC.Types.I# x ->
+                              GHC.Types.I# (GHC.Prim.+# x 1#) },
+                              ww1,
+                              case GHC.List.$wlenAcc @ Main.Direction ww2 0# of ww3 { DEFAULT ->
+                              let {
+                                y :: GHC.Prim.Int# = GHC.Prim.-# ww3 1#
+                              } in
+                              case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.<# 0# y) of wild2 {
+                                GHC.Types.False -> GHC.Types.[] @ Main.Direction
+                                GHC.Types.True
+                                -> GHC.List.$wunsafeTake @ Main.Direction y ww2 } } #)
+                        Main.West -> $w$j GHC.Prim.void#
+                        Main.South -> $w$j GHC.Prim.void#
+                        Main.East -> $w$j GHC.Prim.void#
+                        Main.Stay -> $w$j GHC.Prim.void# }
+                   Main.East
+                   -> (# ww,
+                         case ww1 of wild1 { GHC.Types.I# x ->
+                         GHC.Types.I# (GHC.Prim.-# x 1#) },
+                         case GHC.List.$wlenAcc @ Main.Direction ww2 0# of ww3 { DEFAULT ->
+                         let {
+                           y :: GHC.Prim.Int# = GHC.Prim.-# ww3 1#
+                         } in
+                         case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.<# 0# y) of wild1 {
+                           GHC.Types.False -> GHC.Types.[] @ Main.Direction
+                           GHC.Types.True
+                           -> GHC.List.$wunsafeTake @ Main.Direction y ww2 } } #) }) -}
+a7fcd793b8606cac7211ca5df5b1d36e
+  $wunsafeDrop :: GHC.Prim.Int# -> [a1] -> [a1]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Inline: [0] -}
+f8aeca30cc0323802397450d786aa3a7
+  $wunsafeDrop1 :: GHC.Prim.Int# -> [a1] -> [a1]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Inline: [0] -}
+a7152473d3a8134161c1b843cd7ba7bf
+  $wwalk ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int
+    -> [Main.Direction]
+    -> Main.Maze
+    -> (# (), (Main.Explorer, Main.Maze) #)
+  {- Arity: 4, Strictness: <S,U><L,U(U)><L,U><L,U>, Inline: [0] -}
+0ef083455003fbfde97b4436ef78b80a
+  data Direction = North | West | South | East | Stay
+36454ce9d94005f54d4f7c35ee9e4ca3
+  data Explorer
+    = Explorer GHC.Types.Int GHC.Types.Int [Main.Direction]
+1ccbca8b2a8137c73ca23d05039e3ae3
+  type GameState = (Main.Explorer, Main.Maze)
+fe361d653fc84b4d39559574c9311a9b
+  type Maze = [GHC.Base.String]
+ea03e3c8a9fa1bcf0b5b5bff785d02ad
+  changeNthCharInString ::
+    GHC.Types.Int
+    -> GHC.Types.Char -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, HasNoCafRefs, Strictness: <S(S),1*U(U)><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: GHC.Types.Char)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$wchangeNthCharInString ww1 w1 w2 }) -}
+68afd58daf7372feff1bacb8b7c73247
+  explore :: Main.Explorer -> Main.Maze -> Main.Explorer
+  {- Arity: 2, Strictness: <S(S(S)LL),1*U(U(U),U(U),1*U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Explorer) (w1 :: Main.Maze) ->
+                 case w of ww { Main.Explorer ww1 ww2 ww3 ->
+                 case ww1 of ww4 { GHC.Types.I# ww5 ->
+                 case Main.$wexplore ww5 ww2 ww3 w1 of ww6 { (#,,#) ww7 ww8 ww9 ->
+                 Main.Explorer ww7 ww8 ww9 } } }) -}
+3f2e8a57be4d7e2dbf2ce26e8be10a8a
+  foundTheGold ::
+    GHC.Types.Int -> GHC.Types.Int -> Main.Maze -> GHC.Types.Bool
+  {- Arity: 3, Strictness: <S(S),U(U)><L,U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: GHC.Types.Int) (w2 :: Main.Maze) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$wfoundTheGold ww1 w1 w2 }) -}
+7c0df085715080e8d10ce4f59d606687
+  initExplorer :: Main.Explorer
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.Explorer
+                   Main.initExplorer1
+                   Main.initExplorer1
+                   (GHC.Types.[] @ Main.Direction)) -}
+36b83b006bf88508bee5077677f355d6
+  initExplorer1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+8c20922cf49d688d5340c110a53de90c
+  initGameState :: Main.GameState
+  {- Strictness: m,
+     Unfolding: ((Main.initExplorer, Main.initMaze)) -}
+0a76f71ad5aff94aec763e60cdee175b
+  initMaze :: Main.Maze
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.initMaze13
+                   Main.initMaze1) -}
+1f9aa87c7e358b1aa243839556248408
+  initMaze1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.initMaze12
+                   Main.initMaze2) -}
+00e2f33fa7d7487a1d9969f626cad1ea
+  initMaze10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "#.#######"#) -}
+a6196a793139afd426aa9851ce64101a
+  initMaze11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "#.####..#"#) -}
+5552ed1deaf2c183a41d965ffbc12daf
+  initMaze12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "........#"#) -}
+c7d8222f7f22ead57266f3ab823f3f30
+  initMaze13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ".########"#) -}
+72c7f044904009b2d4b1d324cc94e8eb
+  initMaze2 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.initMaze11
+                   Main.initMaze3) -}
+eaebcdeb431b4c7f159430357dff429a
+  initMaze3 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.initMaze10
+                   Main.initMaze4) -}
+973902d06ac689eba4946b628326794c
+  initMaze4 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.initMaze9
+                   Main.initMaze5) -}
+738ed0584f5f33bd777cbc73d8d56549
+  initMaze5 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.initMaze8
+                   Main.initMaze6) -}
+be3af222f4abdd303266ebd638e6bdb4
+  initMaze6 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.initMaze7
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+a6bad522854e38dd58185f04f576f40f
+  initMaze7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "#..######"#) -}
+7f5fc892e93ec5686bcfd530784d6163
+  initMaze8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "##...####"#) -}
+1c92c522792af4b33fada57ad6d0fc19
+  initMaze9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "...#....."#) -}
+f52c26c62ce64f29f3080552b3741643
+  isInsideMaze ::
+    GHC.Types.Int -> GHC.Types.Int -> Main.Maze -> GHC.Types.Bool
+  {- Arity: 3, Strictness: <S(S),1*U(U)><L,1*U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: GHC.Types.Int) (w2 :: Main.Maze) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$wisInsideMaze ww1 w1 w2 }) -}
+5869d067a955d857015ccc7075934162
+  isWalkable ::
+    GHC.Types.Int -> GHC.Types.Int -> Main.Maze -> GHC.Types.Bool
+  {- Arity: 3, Strictness: <S(S),U(U)><L,U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: GHC.Types.Int) (w2 :: Main.Maze) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$wisWalkable ww1 w1 w2 }) -}
+f35edc0df67b37d43abf3392c596a5dd
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+868c80ca3665630116849f6c2d7ee21e
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 case Main.$wwalk
+                        0#
+                        Main.initExplorer1
+                        (GHC.Types.[] @ Main.Direction)
+                        Main.initMaze of ww { (#,#) ww1 ww2 ->
+                 case ww2 of wild { (,) ds maze ->
+                 case ds of wild1 { Main.Explorer x y direction ->
+                 Main.main2 maze eta } } }) -}
+0c84b8c5b253af5782feaf70f081a655
+  main2 ::
+    [GHC.Base.String]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><S,U> -}
+4bb6a9e879b0cde4a4aca835c3befb19
+  main3 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+cc191b041a12bafcb3b62e9c451e4cdf
+  markMaze ::
+    Main.Explorer -> GHC.Types.Char -> Main.Maze -> Main.Maze
+  {- Arity: 3,
+     Strictness: <S(S(S)LL),1*U(1*U(U),1*U(U),A)><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: Main.Explorer) (w1 :: GHC.Types.Char) (w2 :: Main.Maze) ->
+                 case w of ww { Main.Explorer ww1 ww2 ww3 ->
+                 case ww1 of ww4 { GHC.Types.I# ww5 ->
+                 Main.$wmarkMaze ww5 ww2 w1 w2 } }) -}
+df27d5a1a3f58ba2a2c74e30fcc3e8e0
+  traceBack :: Main.Explorer -> Main.Explorer
+  {- Arity: 1, Strictness: <S(LLS),1*U(U(U),U(U),U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Main.Explorer) ->
+                 case w of ww { Main.Explorer ww1 ww2 ww3 ->
+                 case Main.$wtraceBack ww1 ww2 ww3 of ww4 { (#,,#) ww5 ww6 ww7 ->
+                 Main.Explorer ww5 ww6 ww7 } }) -}
+e2d8e82a33ed100b66ef2cc7b5449ddb
+  traceBack1 :: Main.Explorer
+  {- Strictness: x -}
+468cec69157d18d17e1755d6d8a18cb4
+  traceBack_go ::
+    [Main.Direction] -> Main.Direction -> Main.Direction
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+6319129ade33f076b2e4b4bdaf7c3d7d
+  traceBack_go1 ::
+    [Main.Direction] -> Main.Direction -> Main.Direction
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+84f5b6b904f8b190c9e3bb4795cfa53e
+  traceBack_go2 ::
+    [Main.Direction] -> Main.Direction -> Main.Direction
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+15ecfc723eacc5c1098665224a3dbd53
+  traceBack_go3 ::
+    [Main.Direction] -> Main.Direction -> Main.Direction
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+2d5749946f04a1d4bf117a8c13650b39
+  walk :: Control.Monad.Trans.State.Lazy.State Main.GameState ()
+  {- Arity: 1, Strictness: <S(S(S(S)LL)L),1*U(U(U(U),U(U),U),U)>m,
+     Unfolding: InlineRule (0, True, True)
+                Main.walk1
+                  `cast`
+                (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                          <(Main.Explorer, Main.Maze)>_N
+                          <Data.Functor.Identity.Identity>_R
+                          <()>_N)) -}
+41aa5e6a8e8e759d0c4f28c02df001ac
+  walk1 ::
+    (Main.Explorer, Main.Maze)
+    -> Data.Functor.Identity.Identity ((), (Main.Explorer, Main.Maze))
+  {- Arity: 1, Strictness: <S(S(S(S)LL)L),1*U(U(U(U),U(U),U),U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: (Main.Explorer, Main.Maze)) ->
+                 case w of ww { (,) ww1 ww2 ->
+                 case ww1 of ww3 { Main.Explorer ww4 ww5 ww6 ->
+                 case ww4 of ww7 { GHC.Types.I# ww8 ->
+                 case Main.$wwalk ww8 ww5 ww6 ww2 of ww9 { (#,#) ww10 ww11 ->
+                 (ww10, ww11)
+                   `cast`
+                 (Sym (Data.Functor.Identity.N:Identity[0]
+                           <((), (Main.Explorer, Main.Maze))>_R)) } } } }) -}
+instance [safe] GHC.Classes.Eq [Main.Direction]
+  = Main.$fEqDirection
+instance [safe] GHC.Show.Show [Main.Direction]
+  = Main.$fShowDirection
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
