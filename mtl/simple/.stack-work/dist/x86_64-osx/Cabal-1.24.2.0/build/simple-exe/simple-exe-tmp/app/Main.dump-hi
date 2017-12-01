@@ -1,22 +1,27 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-26 05:13:00.130689 UTC
+2017-11-27 08:03:23.034515 UTC
 
 interface main@main:Main 8002
-  interface hash: 87dc59f8e8543821dce6f696cbdb942f
-  ABI hash: d37f01557e8324772ce3ac46d217e81d
-  export-list hash: 0560166ae3dddaa97746cfba10da7e82
+  interface hash: f40deb70a14761289335b8c1478cb7e0
+  ABI hash: f7accdd10cf63fff2d5285616c4935fb
+  export-list hash: c30816bb36ab634b4f89e96a444ad0c5
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8cab26816f61a011dc5998ab99eeffa3
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.doIt3TimesInsert
   Main.initState
+  Main.insertArray
+  Main.insertArrayTest
   Main.main
-  Main.playArray
+  Main.test
   Main.ArrayState
   Main.ArrayValue
+  Main.Direction{Main.East Main.North Main.South Main.West}
+  Main.Explorer{Main.Explorer}
 module dependencies:
 package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
                       integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
@@ -32,7 +37,6 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
                          base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
                          base-4.9.1.0:GHC.TypeLits
-import  -/  base-4.9.1.0:Control.Monad a6784c5dab0d75c63dabec5a37843f98
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
@@ -40,6 +44,90 @@ import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State 749dc
 import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State.Class 6d31234b0a911b56412061943d18b89e
 import  -/  simple-0.1.0.0@simple-0.1.0.0-5DX8evVT2MQPefjCl7ERW:Lib 78be413347c3ab9df2af47c3b122a7a6
 import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.State.Lazy 371607e50dde46b5f4103b3ab334a497
+bb3361d23a8495ec1af6cf540a991ca3
+  $tc'East :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17050888357325516587##
+                   14332750735201958761##
+                   Main.$trModule
+                   Main.$tc'East1) -}
+19fa6cbac932e1caebd7789680e0bdc2
+  $tc'East1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'East"#) -}
+0ef9483c7983d2d11d1ff88d966a89b0
+  $tc'Explorer :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16483678588871963430##
+                   8120979462103229731##
+                   Main.$trModule
+                   Main.$tc'Explorer1) -}
+e35ec6903c1be2d9fe9036a679297a23
+  $tc'Explorer1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Explorer"#) -}
+0edb16c3234c59d43265681d7d6ac1e5
+  $tc'North :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5808512179632543678##
+                   4812681596767726810##
+                   Main.$trModule
+                   Main.$tc'North1) -}
+d677880d1be110825de991421164b5b8
+  $tc'North1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'North"#) -}
+558c905748b19f040e0b42b3ec2b4b5b
+  $tc'South :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2865139038180644598##
+                   369507681303017565##
+                   Main.$trModule
+                   Main.$tc'South1) -}
+618507f602f76d25fd8ebd891ff18fdb
+  $tc'South1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'South"#) -}
+648b72be95d48920bfacfc4ee03e6ced
+  $tc'West :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   18209971024130499686##
+                   12327776225892234735##
+                   Main.$trModule
+                   Main.$tc'West1) -}
+e65c9c99cbb1524854730fecd4bfbfcc
+  $tc'West1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'West"#) -}
+d23b3790d5ce3eae4079939a31790fd1
+  $tcDirection :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8861613431361662842##
+                   8009291694613289018##
+                   Main.$trModule
+                   Main.$tcDirection1) -}
+0492ff0201b32249ba743eec86e7184a
+  $tcDirection1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Direction"#) -}
+3f417188055d15fe6a3222920b801c46
+  $tcExplorer :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11358254232358395144##
+                   15067937489916249049##
+                   Main.$trModule
+                   Main.$tcExplorer1) -}
+1ebeb637ee235ef6b91e622115946d1a
+  $tcExplorer1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Explorer"#) -}
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -56,36 +144,69 @@ a1a2177834de98e1483320f0e2bdc733
   type ArrayState = [GHC.Types.Int]
 77438929613aa3f5679e71c199ec8a11
   type ArrayValue = ()
+8a6d063befb2af555e919412f06e6128
+  data Direction = North | West | South | East
+a31d7851d39104a226faa62094898499
+  data Explorer = Explorer GHC.Types.Int GHC.Types.Int Main.Direction
+925716ba1872819b4224c74ae534dced
+  doIt3TimesInsert ::
+    Control.Monad.Trans.State.Lazy.State
+      Main.ArrayState Main.ArrayValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Main.doIt3TimesInsert1
+                  `cast`
+                (Trans
+                     (<[GHC.Types.Int]>_R
+                      ->_R Sym (Data.Functor.Identity.N:Identity[0]
+                                    <((), [GHC.Types.Int])>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <[GHC.Types.Int]>_N
+                               <Data.Functor.Identity.Identity>_R
+                               <Main.ArrayValue>_N))) -}
+0090796ca88fcbf7d75f7e76999259ae
+  doIt3TimesInsert1 :: [GHC.Types.Int] -> ((), [GHC.Types.Int])
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s1 :: [GHC.Types.Int]) ->
+                 (GHC.Tuple.(),
+                  GHC.Types.:
+                    @ GHC.Types.Int
+                    Main.doIt3TimesInsert2
+                    (GHC.Types.:
+                       @ GHC.Types.Int
+                       Main.doIt3TimesInsert2
+                       (GHC.Types.:
+                          @ GHC.Types.Int
+                          Main.doIt3TimesInsert_x2
+                          (GHC.Types.:
+                             @ GHC.Types.Int
+                             Main.doIt3TimesInsert_x1
+                             (GHC.Types.: @ GHC.Types.Int Main.doIt3TimesInsert_x s1)))))) -}
+13f4b92cf8da88087253dda4e62819e9
+  doIt3TimesInsert2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+f7ae8c37f0aefad8fc3be8b60b5435b3
+  doIt3TimesInsert_x :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
+eba64aacb91c74a357c683674e8599ea
+  doIt3TimesInsert_x1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
+e6fc06e99934e381ff2286346d28b521
+  doIt3TimesInsert_x2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 5#) -}
 4e4954e8c6e596648aab685d90518203
   initState :: [t]
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) GHC.Types.[] -}
-d9c0dee8a685c5ed422401aaa63f23bf
-  main :: GHC.Types.IO ()
-  {- Arity: 1, Strictness: <S,U>,
-     Unfolding: InlineRule (0, True, True)
-                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-01d62c2c484918d4b5d94b688c90c90e
-  main1 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Strictness: <S,U> -}
-129a1a814fa667791781f32a098e848d
-  main2 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1,
-     Unfolding: (GHC.TopHandler.runMainIO1
-                   @ ()
-                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-e34a9cd7d59328f81550e7a733ba07dc
-  playArray ::
+4f49d7122d1e3dca4287e8ce261bb0a6
+  insertArray ::
     GHC.Types.Int
     -> Control.Monad.Trans.State.Lazy.State
          Main.ArrayState Main.ArrayValue
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m,
      Unfolding: InlineRule (0, True, True)
-                Main.playArray1
+                Main.insertArray1
                   `cast`
                 (<GHC.Types.Int>_R
                  ->_R Trans
@@ -96,13 +217,114 @@ e34a9cd7d59328f81550e7a733ba07dc
                                     <[GHC.Types.Int]>_N
                                     <Data.Functor.Identity.Identity>_R
                                     <Main.ArrayValue>_N))) -}
-134f9f2bd4d5e3b0d3ec9e6e2aaadf58
-  playArray1 ::
+08e828003917d2c87a2216355246255f
+  insertArray1 ::
     GHC.Types.Int -> [GHC.Types.Int] -> ((), [GHC.Types.Int])
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m,
      Unfolding: InlineRule (2, True, False)
                 (\ (x :: GHC.Types.Int) (eta :: [GHC.Types.Int]) ->
                  (GHC.Tuple.(), GHC.Types.: @ GHC.Types.Int x eta)) -}
+947e7877c7325b858c027f70734f51e8
+  insertArrayTest ::
+    Control.Monad.Trans.State.Lazy.State
+      Main.ArrayState Main.ArrayValue
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Main.insertArrayTest1
+                  `cast`
+                (Trans
+                     (<[GHC.Types.Int]>_R
+                      ->_R Sym (Data.Functor.Identity.N:Identity[0]
+                                    <((), [GHC.Types.Int])>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <[GHC.Types.Int]>_N
+                               <Data.Functor.Identity.Identity>_R
+                               <Main.ArrayValue>_N))) -}
+6df300bc0563765a48481cde8866ca5c
+  insertArrayTest1 :: [GHC.Types.Int] -> ((), [GHC.Types.Int])
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s1 :: [GHC.Types.Int]) ->
+                 (GHC.Tuple.(),
+                  GHC.Types.: @ GHC.Types.Int Main.doIt3TimesInsert2 s1)) -}
+3b431aa0c8dd73703ba1fd391fa88532
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+daf51b3f439e738ee76b93b676164e9b
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Main.main2
+                   GHC.Types.True
+                   eta) -}
+76fc8005d88d76291d07711698bacbf1
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.showList__2
+                   Main.main3) -}
+645057c9e2b2125ddf38697eb4b6f4e2
+  main3 :: [GHC.Types.Char]
+  {- Unfolding: (case GHC.Show.$wshowSignedInt
+                        0#
+                        0#
+                        Main.main4 of ww2 { (#,#) ww3 ww4 ->
+                 GHC.Types.: @ GHC.Types.Char ww3 ww4 }) -}
+af89e6346cfb3cffb1be48886f771007
+  main4 :: GHC.Base.String
+  {- Unfolding: (Main.main_showl Main.main5) -}
+0edb44108138c608ee0a6bd0c6a20c28
+  main5 :: [GHC.Types.Int]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Main.doIt3TimesInsert2
+                   Main.main6) -}
+1462c281e53f602bd2ff879721563193
+  main6 :: [GHC.Types.Int]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Main.doIt3TimesInsert_x2
+                   Main.main7) -}
+550974d1ef4eb723507c95409bbc9c88
+  main7 :: [GHC.Types.Int]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Main.doIt3TimesInsert_x1
+                   Main.main8) -}
+cb69ff7992c33d60591e4b53d85c553e
+  main8 :: [GHC.Types.Int]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   Main.doIt3TimesInsert_x
+                   (GHC.Types.[] @ GHC.Types.Int)) -}
+b371c20f5befafae3dcaf598aec56cfb
+  main9 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+ee3ffa2b3645b5827e269220f79a0ee4
+  main_showl :: [GHC.Types.Int] -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+ba38a14c450716bd20bf57c12c9ce075
+  test :: Main.Explorer -> Main.Direction
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.Explorer) ->
+                 case ds of wild { Main.Explorer x y d -> d }) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
